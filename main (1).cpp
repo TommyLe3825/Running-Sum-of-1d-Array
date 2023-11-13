@@ -20,7 +20,7 @@ public:
 };
 
 int main() {
-    vector<int> nums = {1, 2, 3, 4, 5};
+    vector<int> nums = {1, 2, 3, 4, 5}; //vector of integers
     Solution solution; // Create an instance of the Solution class
     vector<int> result = solution.runningSum(nums); // Call the runningSum method
 
