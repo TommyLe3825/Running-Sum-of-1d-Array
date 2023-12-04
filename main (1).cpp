@@ -1,32 +1,26 @@
-#include <iostream>
 #include <vector>
-
-using namespace std;
+#include <iostream>
 
 class Solution {
 public:
-    vector<int> runningSum(vector<int>& nums) {
-        vector<int> results(nums.size());
-        results[0] = nums[0];
-        int sum;
-
-        for(int i = 1; i < nums.size(); i++){
-            sum = nums[i] + results[i - 1];
-            results[i] = sum; 
+    std::vector<int> runningSum(std::vector<int>& nums) { //The parameter probably is using the address of nums so that changes can change nums directly
+        int n = nums.size();                                //It could also be to save memory and time as it is directly accessing the variable
+        for (int i = 1; i < n; ++i) {                       //at that address which is especially good with large data
+            nums[i] += nums[i - 1]; // Update each element with the current sum
         }
-
-        return results;
+        return nums;
     }
 };
 
 int main() {
-    vector<int> nums = {1, 2, 3, 4, 5}; //vector of integers
-    Solution solution; // Create an instance of the Solution class
-    vector<int> result = solution.runningSum(nums); // Call the runningSum method
+    std::vector<int> nums = {1, 2, 3, 4, 5};
+    
+    Solution solution;
+    std::vector<int> result = solution.runningSum(nums); //using the function runningSum to return the new vector of integers of Running Sum
 
-    // Print the resulting vector
-    for(int i = 0; i < result.size(); i++){
-        cout << result[i] << " ";
+    // Display the result
+    for (int num : result) { //for every num in result, print it out {1,3,6,10,15}
+        std::cout << num << " ";
     }
 
     return 0;
