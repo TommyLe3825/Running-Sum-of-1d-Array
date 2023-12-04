@@ -19,7 +19,7 @@ int main() {
     std::vector<int> result = solution.runningSum(nums); //using the function runningSum to return the new vector of integers of Running Sum
 
     // Display the result
-    for (int num : result) { //for every num in result, print it out {1,3,6,10,15}
+    for (int num : result) { //for every num in result, print it out
         std::cout << num << " ";
     }
 
